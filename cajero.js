@@ -4,7 +4,6 @@ const cuentas = [
   { id: 3, nombre: "Marta", saldo: 300, transacciones: [] },
 ];
 
-// Consultar saldo (filter + map)
 function consultarSaldo(idCuenta) {
   return cuentas
     .filter(cuenta => cuenta.id === idCuenta)
@@ -12,3 +11,17 @@ function consultarSaldo(idCuenta) {
 }
 
 console.log(consultarSaldo(1));
+
+function depositar(idCuenta, monto) {
+  cuentas.map(cuenta => {
+    if (cuenta.id === idCuenta) {
+      cuenta.saldo += monto;
+      cuenta.transacciones.push({ tipo: "Depósito", monto });
+    }
+    return cuenta;
+  });
+}
+
+console.log(consultarSaldo(1));  
+depositar(1, 200);     
+console.log(consultarSaldo(1)); 
