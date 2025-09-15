@@ -1,6 +1,6 @@
 # Cajero Automático 💵
 
-Este proyecto es una simulación de un **cajero automático en JavaScript (Node.js)**, desarrollado como ejercicio de la materia **Estructuras de Datos**.
+Este proyecto es una simulación de un **cajero automático en JavaScript (Node.js)**, desarrollado para **Estructuras de Datos - UND2**.
 
 ---
 
@@ -23,7 +23,7 @@ El ejercicio asignado fue el **cajero automático**, por lo tanto se aplican **c
 - Se usa un **array de objetos** para representar las cuentas:  
   ```js
   { id: 1, nombre: "Ana", saldo: 500, transacciones: [] }
-
+```
 // - Cada cuenta contiene:
 // - id: Identificador único de la cuenta.
 // - nombre: Propietario de la cuenta.
@@ -34,6 +34,7 @@ El ejercicio asignado fue el **cajero automático**, por lo tanto se aplican **c
 // - .find() → búsqueda de cuentas por id.
 // - .map() y .filter() → transformación y filtrado de datos.
 // - .push() → registro de transacciones en el historial.
+```
 ---
 # 📂 Estructura del Proyecto
 ```
