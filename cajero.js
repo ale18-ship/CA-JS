@@ -13,15 +13,22 @@ function consultarSaldo(idCuenta) {
 console.log(consultarSaldo(1));
 
 function depositar(idCuenta, monto) {
+const existe = cuentas.some(cuenta => cuenta.id === idCuenta);
+  if (!existe) return "Cuenta no encontrada";
+
   cuentas.map(cuenta => {
     if (cuenta.id === idCuenta) {
-      cuenta.saldo += monto;
-      cuenta.transacciones.push({ tipo: "Depósito", monto });
+      if (cuenta.saldo >= monto) {
+        cuenta.saldo -= monto;
+        cuenta.transacciones.push({ tipo: "Retiro", monto });
+      } else {
+        console.log("Fondos insuficientes");
+      }
     }
     return cuenta;
   });
 }
 
 console.log(consultarSaldo(1));  
-depositar(1, 200);     
+depositar(1, 300);     
 console.log(consultarSaldo(1)); 
